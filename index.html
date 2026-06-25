@@ -87,8 +87,16 @@ nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-f
 
 /* demo */
 .demo{background:var(--soft)}
-.video{max-width:760px;margin:34px auto 0;aspect-ratio:16/9;border-radius:var(--radius);border:2px dashed var(--line);background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--muted)}
-.play{width:64px;height:64px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem}
+.demo-stage{display:flex;gap:28px;justify-content:center;align-items:flex-start;flex-wrap:wrap;margin-top:38px}
+.demo-col{display:flex;flex-direction:column;align-items:center}
+.demo-col .phone{margin:0}
+.demo-cap{font-size:.84rem;color:var(--body);font-weight:600;margin-top:14px}
+.demo-cap span{color:var(--green)}
+.tchip{align-self:center;background:#182229;color:#8696a0;font-size:.68rem;font-weight:600;padding:3px 10px;border-radius:8px;margin:2px 0 4px}
+.bub.voice{display:flex;align-items:center;gap:8px;color:#e9edef;min-width:150px}
+.bub.voice .wave{flex:1;height:3px;border-radius:2px;background:linear-gradient(90deg,#cfe9d6 55%,#4a5a64 55%)}
+.bub.alert{align-self:stretch;max-width:100%;border-left:3px solid var(--wa);font-size:.82rem}
+.bub.alert b{color:#fff}
 
 /* pricing */
 .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px;align-items:stretch}
@@ -143,7 +151,7 @@ footer{padding:36px 0;border-top:1px solid var(--line);font-size:.88rem;color:va
   <p class="sub">Saarthi is an AI assistant that instantly replies to your customers on WhatsApp, takes orders &amp; bookings, and pings you the moment one comes in — even at 2 AM. In Hindi, Marathi &amp; English.</p>
   <div class="cta">
     <a href="#cta" class="btn btn-primary">Start 7-day free trial →</a>
-    <a href="#demo" class="btn btn-ghost">▶ Watch 60-sec demo</a>
+    <a href="#demo" class="btn btn-ghost">▶ See how it works</a>
   </div>
   <div class="note">No credit card · Free setup · Cancel anytime</div>
 
@@ -209,9 +217,37 @@ footer{padding:36px 0;border-top:1px solid var(--line);font-size:.88rem;color:va
 <!-- DEMO -->
 <section id="demo" class="demo center"><div class="wrap">
   <span class="eyebrow">See it live</span>
-  <h2>Watch Saarthi take a real order.</h2>
-  <p style="max-width:520px;margin:14px auto 0">A 60-second walkthrough — customer asks, orders, and the owner gets pinged.</p>
-  <div class="video"><div class="play">▶</div><span>Demo video coming soon</span></div>
+  <h2>See Saarthi take a real order.</h2>
+  <p style="max-width:560px;margin:14px auto 0">A real conversation — a customer messages after hours by voice note, Saarthi answers, takes the order, and pings the owner instantly.</p>
+  <div class="demo-stage">
+
+    <div class="demo-col">
+      <div class="phone"><div class="screen">
+        <div class="wahead"><div class="wadot">S</div><div><b style="color:#fff">Sharma's Kitchen</b><br><span style="font-size:.72rem;color:#8696a0">online · replies instantly</span></div></div>
+        <div class="chat">
+          <div class="tchip">Today · 11:52 PM</div>
+          <div class="bub out voice">🎤 <span class="wave"></span> 0:07</div>
+          <div class="bub in">Namaste 🙏 Even this late, I've got you. Butter Chicken ₹180, Dal Makhani ₹120 — tonight's bestsellers. Shall I place an order?</div>
+          <div class="bub out">Haan, 1 butter chicken + 2 roti, MG Road</div>
+          <div class="bub in">✅ Order confirmed!<br>Butter Chicken ×1 — ₹180<br>Roti ×2 — ₹30<br>Total ₹210 · Delivery 30–45 min<br>Owner notified 🔔 Shukriya!</div>
+        </div>
+      </div></div>
+      <div class="demo-cap">📱 Your <span>customer's</span> WhatsApp</div>
+    </div>
+
+    <div class="demo-col">
+      <div class="phone"><div class="screen">
+        <div class="wahead"><div class="wadot" style="background:var(--green);color:#fff">🔔</div><div><b style="color:#fff">Saarthi · Order alert</b><br><span style="font-size:.72rem;color:#8696a0">to you, the owner</span></div></div>
+        <div class="chat">
+          <div class="tchip">Today · 11:52 PM</div>
+          <div class="bub in alert"><b>🔔 NEW ORDER</b><br>🍛 Butter Chicken ×1 — ₹180<br>🫓 Roti ×2 — ₹30<br>💰 Total: ₹210<br>📍 MG Road<br>📞 +91 98••• ••210<br>🕐 11:52 PM<br>📊 Logged to your Google Sheet ✅</div>
+          <div class="bub out">Got it 👍</div>
+        </div>
+      </div></div>
+      <div class="demo-cap">🔔 <span>Your</span> phone, instantly</div>
+    </div>
+
+  </div>
 </div></section>
 
 <!-- PRICING -->
